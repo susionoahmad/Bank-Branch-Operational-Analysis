@@ -1,0 +1,11 @@
+SELECT 
+    CASE 
+        WHEN TIMESTAMP_DIFF(TIMESTAMP(start_time), TIMESTAMP(arrival_time), MINUTE) <= 5 THEN '1. Cepat (0-5 mnt)'
+        WHEN TIMESTAMP_DIFF(TIMESTAMP(start_time), TIMESTAMP(arrival_time), MINUTE) <= 15 THEN '2. Standar (6-15 mnt)'
+        ELSE '3. Lama (>15 mnt)'
+    END AS kategori_antrean,
+    COUNT(*) AS jumlah_nasabah,
+    ROUND(AVG(satisfaction_score), 2) AS rata_rata_kepuasan
+FROM `dataanalyst-496415.banking_analysis.operasional_cabang`
+GROUP BY kategori_antrean
+ORDER BY kategori_antrean;
