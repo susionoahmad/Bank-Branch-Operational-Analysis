@@ -24,3 +24,12 @@ SELECT
 FROM `dataanalyst-496415.banking_analysis.operasional_cabang`
 GROUP BY jam_kedatangan
 ORDER BY jam_kedatangan;
+
+**## 🤖 Advanced Analytics: Predictive Modeling with Python**
+
+Selain melakukan visualisasi historis, proyek ini dikembangkan lebih lanjut menggunakan Python (Google Colab) untuk membangun **Early Warning System (EWS)** berbasis Machine Learning.
+
+- **Algorithm:** Decision Tree Classifier
+- **Features:** Waktu tunggu nasabah & tipe layanan
+- **Target:** Memprediksi secara real-time apakah nasabah akan Puas (CSAT 4-5) atau Kecewa (CSAT 1-3).
+- **Model Logic:** Berhasil mengekstrak aturan otomatis bahwa ambang batas kritis kepuasan nasabah berada di angka **20.5 menit**.
